@@ -1,20 +1,63 @@
-function generateHomeContent() {
-  const content = document.getElementById('content');
+import { getHomeContent } from "./home";
+import { getMenuContent } from "./menu";
+import { getContactContent } from "./contact";
 
-  const header = document.createElement('h1');
-  header.innerText = "Surfer Boy Pizza";
+const content = document.getElementById('content');
+const main = document.createElement('main');
+
+function createHeader() {
+  const header = document.createElement('header');
+  header.appendChild(createNav());
   content.appendChild(header);
-
-  const logo = document.createElement('img');
-  logo.setAttribute('src', '../src/images/surfer-boy-pizza-logo.jpeg');
-  logo.setAttribute('alt', 'surfer boy pizza logo');
-  logo.setAttribute('height', '150');
-  logo.setAttribute('width', '150');
-  content.appendChild(logo);
-
-  const copy = document.createElement('p');
-  copy.innerText = 'Enjoy our delicious pizza made with the freshest ingredients...except for the pineapple. That comes out of a can.';
-  content.appendChild(copy);
 }
 
-generateHomeContent();
+function createMain() {
+  loadMain(getHomeContent());
+  content.appendChild(main);
+}
+
+function createNav() {
+  const nav = document.createElement('nav');
+
+  const navItems = document.createElement('ul');
+
+  const homeItem = document.createElement('li');
+  homeItem.innerText = 'Home';
+  homeItem.addEventListener('click', () => {
+    loadMain(getHomeContent());
+  });
+  navItems.appendChild(homeItem);
+
+  const menuItem = document.createElement('li');
+  menuItem.innerText = 'Menu';
+  menuItem.addEventListener('click', () => {
+    loadMain(getMenuContent());
+  });
+  navItems.appendChild(menuItem);
+
+  const contactItem = document.createElement('li');
+  contactItem.innerText = 'Contact';
+  contactItem.addEventListener('click', () => {
+    loadMain(getContactContent());
+  });
+  navItems.appendChild(contactItem);
+
+  nav.appendChild(navItems);
+
+  return nav;
+}
+
+function loadMain(mainContent) {
+  while (main.firstChild) {
+    main.removeChild(main.firstChild);
+  }
+
+  main.appendChild(mainContent);
+}
+
+function init() {
+  createHeader();
+  createMain();
+}
+
+init();
