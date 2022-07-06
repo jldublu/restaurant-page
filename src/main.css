@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-item {
+  font-size: 25px;
+  margin: 20px;
+  padding-bottom: 5px;
+  list-style: none;
+  border-bottom: solid 2px transparent;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  border-bottom:  solid 2px #df1623;
+}
