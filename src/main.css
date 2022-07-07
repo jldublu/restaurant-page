@@ -1,14 +1,17 @@
+/* Nav Bar */
 nav {
   display: flex;
   justify-content: center;
 }
 
-.menu {
+.nav-menu {
   display: flex;
   justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
-.menu-item {
+.nav-item {
   font-size: 25px;
   margin: 20px;
   padding-bottom: 5px;
@@ -16,7 +19,13 @@ nav {
   border-bottom: solid 2px transparent;
 }
 
-.menu-item:hover {
+.nav-item:hover {
   cursor: pointer;
   border-bottom:  solid 2px #df1623;
+}
+
+/* Menu Page */
+.menu-container {
+  display: flex;
+  justify-content: center;
 }

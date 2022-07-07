@@ -21,10 +21,10 @@ function createNav() {
   const nav = document.createElement('nav');
 
   const navItems = document.createElement('ul');
-  navItems.classList.add('menu');
+  navItems.classList.add('nav-menu');
 
   const homeItem = document.createElement('li');
-  homeItem.classList.add('menu-item');
+  homeItem.classList.add('nav-item');
   homeItem.innerText = 'Home';
   homeItem.addEventListener('click', () => {
     loadMain(getHomeContent());
@@ -32,7 +32,7 @@ function createNav() {
   navItems.appendChild(homeItem);
 
   const menuItem = document.createElement('li');
-  menuItem.classList.add('menu-item');
+  menuItem.classList.add('nav-item');
   menuItem.innerText = 'Menu';
   menuItem.addEventListener('click', () => {
     loadMain(getMenuContent());
@@ -40,7 +40,7 @@ function createNav() {
   navItems.appendChild(menuItem);
 
   const contactItem = document.createElement('li');
-  contactItem.classList.add('menu-item');
+  contactItem.classList.add('nav-item');
   contactItem.innerText = 'Contact';
   contactItem.addEventListener('click', () => {
     loadMain(getContactContent());
